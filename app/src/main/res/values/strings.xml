@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">HuntyCinema</string>
+    <color name="main_color">#243441</color>
+    <color name="label_color">#5699B6</color>
 </resources>
