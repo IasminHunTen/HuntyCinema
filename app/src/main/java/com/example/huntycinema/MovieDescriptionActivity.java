@@ -28,7 +28,7 @@ public class MovieDescriptionActivity extends AppCompatActivity {
     private MovieItem movieItem;
 
 
-    private static final String TAG = "MovieDescriptionActivit";
+    private static final String TAG = "MovieDescriptionActivity";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +38,7 @@ public class MovieDescriptionActivity extends AppCompatActivity {
         imdbRate();
     }
 
+    @SuppressLint("SetTextI18n")
     private void init(){
         movieItem = (MovieItem) getIntent().getSerializableExtra("movie_item");
 
@@ -51,11 +52,17 @@ public class MovieDescriptionActivity extends AppCompatActivity {
                 .load(movieItem.getImageUrl())
                 .into(poster);
 
-        TextView header = (TextView) findViewById(R.id.header_description);
-        header.setText(movieItem.prepareHeader());
+        TextView movie_name = (TextView) findViewById(R.id.movie_name);
+        movie_name.setText(movieItem.getTitle());
+
+        TextView movie_genres = (TextView) findViewById(R.id.movie_genres);
+        movie_genres.setText(movieItem.getGenres());
+
+        TextView movie_year_rt = (TextView) findViewById(R.id.movie_year_rt);
+        movie_year_rt.setText(movieItem.getYear() + " " + movieItem.getRun_time());
 
         TextView plot = (TextView) findViewById(R.id.plot);
-        plot.setText(movieItem.getPlot());
+        plot.setText(movieItem.getPlot() + movieItem.getPlot() + movieItem.getPlot());
 
         TextView top_cast = (TextView) findViewById(R.id.top_cast);
         top_cast.setText(movieItem.getTop_cast());
