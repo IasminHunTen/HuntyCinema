@@ -1,7 +1,9 @@
 package com.example.huntycinema.components.reyclerAdapter;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,10 +14,12 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.huntycinema.MovieDescriptionActivity;
 import com.example.huntycinema.R;
 import com.example.huntycinema.components.MovieItem;
 
 
+import java.util.Arrays;
 import java.util.List;
 
 public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MyViewHolder> {
@@ -55,6 +59,14 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MyViewHolder
                 .load(movieItem.getImageUrl())
                 .centerCrop()
                 .into(holder.movie_poster);
+        holder.movie_poster.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent movie_description_intent = new Intent(context, MovieDescriptionActivity.class);
+                movie_description_intent.putExtra("movie_item", movieItem);
+                ((Activity)context).startActivity(movie_description_intent);
+            }
+        });
     }
 
     @Override

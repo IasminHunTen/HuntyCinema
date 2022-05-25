@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/movie_description_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_color">
+
+    <ImageView
+        android:id="@+id/full_cover_poster"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        tools:srcCompat="@tools:sample/avatars" />
+
+
+    <Button
+        android:id="@+id/buy_ticket"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Buy Ticket"
+        android:background="@drawable/right_rounded_botton"
+        android:translationZ="1dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/trailer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Trailer"
+        android:background="@drawable/right_rounded_botton"
+        android:translationZ="1dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buy_ticket" />
+
+    <Button
+        android:id="@+id/imdb_rate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:translationZ="1dp"
+        android:background="@drawable/left_rounded_button"
+        android:drawableRight="@drawable/ic_imdb_rate"
+        android:layout_marginTop="32dp"
+        android:clickable="false"
+        android:visibility="invisible"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+    </Button>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="300sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:translationZ="1dp"
+        android:background="@drawable/fade_to_blue"
+        >
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="25dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginLeft="16sp"
+                android:layout_marginRight="16sp"
+                >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:id="@+id/header_description"
+                    android:textColor="@color/amber"
+                    android:textStyle="bold"
+                    android:textSize="24sp"
+                    >
+                </TextView>
+                
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/plot"
+                    android:textColor="@color/amber"
+                    android:textSize="16sp"
+                    android:textStyle="normal"
+                    android:layout_marginTop="10sp"
+                    app:layout_constraintTop_toBottomOf="@id/header_description">
+                </TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/top_cast_label"
+                    android:text="TOP CAST: "
+                    android:textColor="@color/amber"
+                    android:textStyle="bold"
+                    android:textSize="24sp"
+                    android:layout_marginTop="10sp"
+                    app:layout_constraintTop_toBottomOf="@id/plot"
+                    app:layout_constraintLeft_toLeftOf="parent">
+                </TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/top_cast"
+                    android:textColor="@color/amber"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="4sp"
+                    app:layout_constraintLeft_toRightOf="@id/top_cast_label"
+                    app:layout_constraintBottom_toBottomOf="@id/top_cast_label">
+                </TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/director_label"
+                    android:layout_marginBottom="10sp"
+                    android:textColor="@color/amber"
+                    android:textStyle="bold"
+                    android:textSize="24sp"
+                    android:text="DIRECTOR: "
+                    android:layout_marginTop="10sp"
+                    app:layout_constraintTop_toBottomOf="@id/top_cast_label"
+                    app:layout_constraintLeft_toLeftOf="parent">
+
+                </TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/director"
+                    android:textColor="@color/amber"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="4sp"
+                    app:layout_constraintLeft_toRightOf="@id/director_label"
+                    app:layout_constraintBottom_toBottomOf="@id/director_label">
+                </TextView>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

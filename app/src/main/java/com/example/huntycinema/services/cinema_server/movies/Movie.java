@@ -6,7 +6,7 @@ import java.util.List;
 public class Movie {
     private String id, tag, title, plot, poster, trailer;
     private int year, run_time;
-    private double imdb_rate;
+    private Double imdb_rate;
     private List<String> genres = new ArrayList<>();
     private List<String> directors = new ArrayList<>();
     private List<String> top_cast = new ArrayList<>();
@@ -75,11 +75,11 @@ public class Movie {
         this.run_time = run_time;
     }
 
-    public double getImdb_rate() {
+    public Double getImdb_rate() {
         return imdb_rate;
     }
 
-    public void setImdb_rate(double imdb_rate) {
+    public void setImdb_rate(Double imdb_rate) {
         this.imdb_rate = imdb_rate;
     }
 
