@@ -1,4 +1,4 @@
-package com.example.huntycinema.services.cinema_server.users.gson_mapper_objects;
+package com.example.huntycinema.services.cinema_server.users.authentication;
 
 public class UserToken {
     private String token;

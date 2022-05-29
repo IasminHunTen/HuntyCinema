@@ -1,8 +1,7 @@
-package com.example.huntycinema.services.cinema_server.users;
+package com.example.huntycinema.services.cinema_server.users.authentication;
 
 import com.example.huntycinema.services.cinema_server.MyApiRequest;
-import com.example.huntycinema.services.cinema_server.users.gson_mapper_objects.Credentials;
-import com.example.huntycinema.services.cinema_server.users.gson_mapper_objects.UserToken;
+import com.example.huntycinema.services.cinema_server.users.UsersApi;
 import com.example.huntycinema.utils.CallBackHandler;
 import com.example.huntycinema.utils.ResponseHandler;
 
@@ -16,11 +15,16 @@ public class UserClient extends MyApiRequest {
 
     public void getToken(String device_id, ResponseHandler<UserToken> responseHandler){
         Call<UserToken> call = usersApi.getToken(device_id);
-        call.enqueue(new CallBackHandler<UserToken>(responseHandler));
+        call.enqueue(new CallBackHandler<>(responseHandler));
     }
 
     public void login(String username, String password, String device_id, ResponseHandler<UserToken> responseHandler){
         Call<UserToken> call = usersApi.login(device_id, new Credentials(username, password));
-        call.enqueue(new CallBackHandler<UserToken>(responseHandler));
+        call.enqueue(new CallBackHandler<>(responseHandler));
+    }
+
+    public void register(String email, String username, String password, String device_id, ResponseHandler<UserToken> responseHandler){
+        Call<UserToken> call = usersApi.login(device_id, new CredentialsWithEmail(username, password, email));
+        call.enqueue(new CallBackHandler<>(responseHandler));
     }
 }

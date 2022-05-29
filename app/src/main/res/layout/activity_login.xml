@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity"
+    android:background="@color/main_color">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hunty Cinema"
+        android:textColor="@color/label_color"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:id="@+id/title_login"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.05" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="32sp"
+        android:id="@+id/username_field_login"
+        android:scrollHorizontally="true"
+        android:maxLines="1"
+        android:hint="@string/username_hint"
+        android:textSize="20sp"
+        android:layout_marginLeft="32sp"
+        android:layout_marginRight="32sp"
+        android:layout_marginTop="164sp"
+        android:drawableLeft="@drawable/username_field"
+        android:background="@drawable/full_rounded_view"
+        app:layout_constraintTop_toBottomOf="@id/title_login"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/username_validator_login"
+        android:visibility="invisible"
+        android:textColor="@color/error_mes"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:text="@string/empty_field"
+        android:layout_marginTop="5sp"
+        app:layout_constraintTop_toBottomOf="@id/username_field_login"
+        app:layout_constraintLeft_toLeftOf="@id/username_field_login"
+        app:layout_constraintRight_toRightOf="@id/username_field_login"/>
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="32sp"
+        android:id="@+id/password_field_login"
+        android:hint="@string/password_hint"
+        android:scrollHorizontally="true"
+        android:maxLines="1"
+        android:textSize="20sp"
+        android:inputType="textPassword"
+        android:layout_marginLeft="32sp"
+        android:layout_marginRight="32sp"
+        android:layout_marginTop="40sp"
+        android:drawableLeft="@drawable/password_field"
+        android:background="@drawable/full_rounded_view"
+        app:layout_constraintTop_toBottomOf="@id/username_field_login"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/password_validator_login"
+        android:visibility="invisible"
+        android:textColor="@color/error_mes"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:text="@string/empty_field"
+        android:layout_marginTop="5sp"
+        app:layout_constraintTop_toBottomOf="@id/password_field_login"
+        app:layout_constraintLeft_toLeftOf="@id/password_field_login"
+        app:layout_constraintRight_toRightOf="@id/password_field_login"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/reset_password_link"
+        android:textSize="24sp"
+        android:text="@string/reset_password_link"
+        android:textColor="@color/link_action"
+        android:layout_marginTop="40sp"
+        app:layout_constraintTop_toBottomOf="@id/password_field_login"
+        app:layout_constraintRight_toRightOf="@id/password_field_login"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/register_link"
+        android:textSize="24sp"
+        android:text="@string/register_link"
+        android:textColor="@color/link_action"
+        android:layout_marginTop="20sp"
+        app:layout_constraintTop_toBottomOf="@id/reset_password_link"
+        app:layout_constraintRight_toRightOf="@id/reset_password_link"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/login_button"
+        android:textSize="32sp"
+        android:text="Login"
+        android:enabled="false"
+        android:textColor="@color/label_color"
+        android:layout_marginTop="5sp"
+        android:background="@drawable/full_rounded_view"
+        app:layout_constraintLeft_toLeftOf="@id/password_field_login"
+        app:layout_constraintTop_toBottomOf="@id/register_link"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

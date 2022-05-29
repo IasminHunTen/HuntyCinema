@@ -1,62 +1,55 @@
 package com.example.huntycinema.localstorage;
 
 
+import com.example.huntycinema.services.cinema_server.users.cards.Card;
 
-import android.annotation.SuppressLint;
-import android.content.Context;
-import android.provider.Settings;
-import android.util.Log;
-import android.widget.Toast;
-
-import androidx.annotation.Nullable;
-
-import com.example.huntycinema.components.MovieItem;
-import com.example.huntycinema.services.cinema_server.MyApiRequest;
-import com.example.huntycinema.services.cinema_server.movies.Movie;
-import com.example.huntycinema.services.cinema_server.movies.MovieClient;
-import com.example.huntycinema.services.cinema_server.schedule.Schedule;
-import com.example.huntycinema.services.cinema_server.schedule.ScheduleClient;
-import com.example.huntycinema.services.cinema_server.users.UserClient;
-import com.example.huntycinema.services.cinema_server.users.gson_mapper_objects.UserToken;
-import com.example.huntycinema.utils.ResponseHandler;
-
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.stream.Collectors;
 
+import io.reactivex.rxjava3.annotations.Nullable;
 
 public class DataStorageSingleton {
 
     private static String token;
-    private static DataStorageSingleton instance;
-    private static Context context;
-    private Map<String, MovieItem> movieMap = new HashMap<>();
-    private UserClient userClient;
-    private MovieClient movieClient = new MovieClient();
-    private ScheduleClient scheduleClient = new ScheduleClient();
-    private Boolean loadState;
+    private static String device_id;
+    private static boolean loadState;
+    private static boolean go2account;
+    private static List<Card> myCards;
 
-    private DataStorageSingleton(Context context){
-        DataStorageSingleton.context = context;
-        loadState = false;
+    public DataStorageSingleton(@Nullable String token, String device_id) {
+        DataStorageSingleton.token = token;
+        DataStorageSingleton.device_id = device_id;
+        DataStorageSingleton.loadState = true;
     }
 
-    public static synchronized DataStorageSingleton getInstance(Context context){
-        if (instance == null)
-            instance = new DataStorageSingleton(context);
-        return instance;
+    public static void setToken(String token){
+        DataStorageSingleton.token = token;
     }
 
     public static String getToken() {
         return token;
     }
 
-    public static void setToken(String token) {
-        DataStorageSingleton.token = token;
+    public static String getDevice_id() {
+        return device_id;
     }
 
+    public static boolean isStateLoaded(){
+        return loadState;
+    }
 
+    public static boolean isGo2account() {
+        return go2account;
+    }
+
+    public static List<Card> getMyCards() {
+        return myCards;
+    }
+
+    public static void setMyCards(List<Card> myCards) {
+        DataStorageSingleton.myCards = myCards;
+    }
+
+    public static void setGo2account(boolean go2account) {
+        DataStorageSingleton.go2account = go2account;
+    }
 }

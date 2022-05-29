@@ -12,6 +12,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HuntyCinema">
         <activity
+            android:name=".MyCardsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BuyTicketsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MyAccountActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false" />
+        <activity
             android:name=".TrailerActivity"
             android:exported="false" />
         <activity

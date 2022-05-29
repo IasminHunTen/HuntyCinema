@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="8sp"
+    android:layout_marginTop="8sp"
+    android:background="@drawable/credit_card_view"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/card_number"
+        android:textSize="32sp"
+        android:textColor="@color/blue"
+        android:text="1234 1234 1234 1234"
+        android:layout_marginTop="32sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/card_validity"
+        android:textSize="32sp"
+        android:textColor="@color/blue"
+        android:text="valid: 04/26"
+        android:layout_marginTop="24sp"
+        app:layout_constraintTop_toBottomOf="@id/card_number"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/card_holder"
+        android:text="Hunty"
+        android:textSize="32sp"
+        android:textColor="@color/blue"
+        android:layout_marginTop="24sp"
+        app:layout_constraintStart_toStartOf="@id/card_number"
+        app:layout_constraintTop_toBottomOf="@id/card_validity"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/revoke_card"
+        android:textColor="@color/red"
+        android:text="@string/revoke_card"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="@id/card_number"
+        app:layout_constraintTop_toBottomOf="@id/card_holder"/>
+
+    <View
+        android:id="@+id/divider4"
+        android:layout_width="409dp"
+        android:layout_height="1dp"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="250sp"
+        android:layout_marginTop="250sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

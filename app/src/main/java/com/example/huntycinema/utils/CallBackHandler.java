@@ -14,7 +14,8 @@ public class CallBackHandler<T> implements Callback<T>{
     @Override
     public void onResponse(Call<T> call, Response<T> response) {
         if (!response.isSuccessful()){
-            responseHandler.onError("code: " + response.code() + "\nReason: " + response.message());
+            responseHandler.onError(response.code(), "code: " + response.code() +
+                    "\nReason: " + response.message());
             return;
         }
         responseHandler.onResponse(response.body());
@@ -22,6 +23,6 @@ public class CallBackHandler<T> implements Callback<T>{
 
     @Override
     public void onFailure(Call<T> call, Throwable t) {
-        responseHandler.onError(t.getMessage());
+        responseHandler.onError(500, t.getMessage());
     }
 }

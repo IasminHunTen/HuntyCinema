@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_color"
+    tools:context=".RegisterActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:textColor="@color/label_color"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:id="@+id/title_register"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.05" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="32sp"
+        android:id="@+id/email_field"
+        android:scrollHorizontally="true"
+        android:maxLines="1"
+        android:textSize="20sp"
+        android:layout_marginLeft="32sp"
+        android:layout_marginRight="32sp"
+        android:layout_marginTop="100sp"
+        android:drawableStart="@drawable/mail_field"
+        android:background="@drawable/full_rounded_view"
+        app:layout_constraintTop_toBottomOf="@id/title_register"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/email_validator"
+        android:visibility="invisible"
+        android:textColor="@color/error_mes"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:text="@string/empty_field"
+        android:layout_marginTop="5sp"
+        app:layout_constraintTop_toBottomOf="@id/email_field"
+        app:layout_constraintLeft_toLeftOf="@id/email_field"
+        app:layout_constraintRight_toRightOf="@id/email_field"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="32sp"
+        android:id="@+id/username_field_register"
+        android:scrollHorizontally="true"
+        android:maxLines="1"
+        android:textSize="20sp"
+        android:layout_marginLeft="32sp"
+        android:layout_marginRight="32sp"
+        android:layout_marginTop="40sp"
+        android:drawableStart="@drawable/username_field"
+        android:background="@drawable/full_rounded_view"
+        app:layout_constraintTop_toBottomOf="@id/email_field"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/username_validator_register"
+        android:visibility="invisible"
+        android:textColor="@color/error_mes"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:text="@string/empty_field"
+        android:layout_marginTop="5sp"
+        app:layout_constraintTop_toBottomOf="@id/username_field_register"
+        app:layout_constraintLeft_toLeftOf="@id/username_field_register"
+        app:layout_constraintRight_toRightOf="@id/username_field_register"/>
+
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="32sp"
+        android:id="@+id/password_field_register"
+        android:scrollHorizontally="true"
+        android:maxLines="1"
+        android:textSize="20sp"
+        android:inputType="textPassword"
+        android:layout_marginTop="40sp"
+        android:layout_marginLeft="32sp"
+        android:layout_marginRight="32sp"
+        android:drawableStart="@drawable/password_field"
+        android:drawableEnd="@drawable/hide_password"
+        android:background="@drawable/full_rounded_view"
+        app:layout_constraintTop_toBottomOf="@id/username_field_register"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/password_validator_register"
+        android:visibility="invisible"
+        android:textColor="@color/error_mes"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:text="@string/empty_field"
+        android:layout_marginTop="5sp"
+        app:layout_constraintTop_toBottomOf="@id/password_field_register"
+        app:layout_constraintLeft_toLeftOf="@id/password_field_register"
+        app:layout_constraintRight_toRightOf="@id/password_field_register"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/login_link"
+        android:textSize="24sp"
+        android:text="@string/login_link"
+        android:textColor="@color/link_action"
+        android:layout_marginTop="40sp"
+        app:layout_constraintTop_toBottomOf="@id/password_field_register"
+        app:layout_constraintRight_toRightOf="@id/password_field_register"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/register_button"
+        android:textSize="32sp"
+        android:text="Register"
+        android:textColor="@color/label_color"
+        android:background="@drawable/full_rounded_view"
+        android:layout_marginTop="20sp"
+        app:layout_constraintLeft_toLeftOf="@id/password_field_register"
+        app:layout_constraintTop_toBottomOf="@id/login_link"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

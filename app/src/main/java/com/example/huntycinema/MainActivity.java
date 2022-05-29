@@ -1,13 +1,21 @@
 package com.example.huntycinema;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.provider.Settings;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.ImageButton;
 import android.widget.ProgressBar;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -16,7 +24,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.huntycinema.components.MovieItem;
 import com.example.huntycinema.components.MovieItemFetcher;
 import com.example.huntycinema.components.reyclerAdapter.MovieAdapter;
+import com.example.huntycinema.localstorage.DataStorageSingleton;
+import com.example.huntycinema.services.cinema_server.users.authentication.UserClient;
+import com.example.huntycinema.services.cinema_server.users.authentication.UserToken;
 import com.example.huntycinema.utils.DateUtils;
+import com.example.huntycinema.utils.ResponseHandler;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView movieRecyclerView;
     private ProgressBar progressBar;
     private Button date_button;
+    private ImageButton my_account;
     private DatePickerDialog datePickerDialog;
     private RecyclerView.LayoutManager layoutManager;
 
@@ -35,7 +48,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         init();
-        new UpdateStorage().execute(DateUtils.formatDate(null));
     }
 
     private void init() {
@@ -46,6 +58,22 @@ public class MainActivity extends AppCompatActivity {
         layoutManager = new LinearLayoutManager(this);
         movieRecyclerView.setLayoutManager(layoutManager);
         initDatePicker();
+        go2MyAccount();
+        if(!DataStorageSingleton.isStateLoaded()){
+            @SuppressLint("HardwareIds") String device_id = Settings.Secure.getString(this.getContentResolver(), Settings.Secure.ANDROID_ID);
+            new UserClient().getToken(device_id, new ResponseHandler<UserToken>() {
+                @Override
+                public void onResponse(UserToken response) {
+                    new DataStorageSingleton(response.getToken(), device_id);
+                    new UpdateStorage().execute(DateUtils.formatDate(null));
+                }
+
+                @Override
+                public void onError(int code, String error) {
+                    Toast.makeText(MainActivity.this, error, Toast.LENGTH_LONG).show();
+                }
+            });
+        }
     }
 
     private void initDatePicker(){
@@ -75,6 +103,22 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    private void go2MyAccount(){
+        my_account = (ImageButton) findViewById(R.id.my_account_main);
+        my_account.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(DataStorageSingleton.getToken() != null)
+                    startActivity(new Intent(getApplicationContext(), MyAccountActivity.class));
+                else {
+                    DataStorageSingleton.setGo2account(true);
+                    startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+                }
+            }
+        });
+    }
+
+
 
     private class UpdateStorage extends AsyncTask<String, Void, List<MovieItem>>{
 
@@ -84,6 +128,7 @@ public class MainActivity extends AppCompatActivity {
         protected void onPreExecute() {
             super.onPreExecute();
             movieItemFetcher = new MovieItemFetcher();
+            date_button.setClickable(false);
             progressBar.setVisibility(View.VISIBLE);
             movieRecyclerView.setVisibility(View.INVISIBLE);
         }
@@ -120,9 +165,9 @@ public class MainActivity extends AppCompatActivity {
             movieRecyclerView.setAdapter(movieAdapter);
             movieRecyclerView.setVisibility(View.VISIBLE);
             progressBar.setVisibility(View.INVISIBLE);
+            date_button.setClickable(true);
         }
+
     }
-
-
 
 }

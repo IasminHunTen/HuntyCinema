@@ -68,7 +68,7 @@ public class MovieItemFetcher {
                     }
 
                     @Override
-                    public void onError(String error) {
+                    public void onError(int code, String error) {
                         Toast.makeText(context, error, Toast.LENGTH_LONG);
                         loadState = true;
                     }
@@ -76,7 +76,7 @@ public class MovieItemFetcher {
             }
 
             @Override
-            public void onError(String error) {
+            public void onError(int code, String error) {
                 Toast.makeText(context, error, Toast.LENGTH_LONG);
                 loadState = true;
             }

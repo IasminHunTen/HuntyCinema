@@ -21,7 +21,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.bumptech.glide.request.transition.Transition;
 import com.example.huntycinema.components.MovieItem;
-import com.squareup.picasso.Picasso;
+import com.example.huntycinema.localstorage.DataStorageSingleton;
 
 public class MovieDescriptionActivity extends AppCompatActivity {
 
@@ -34,8 +34,6 @@ public class MovieDescriptionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_movie_description);
         init();
-        playTrailer();
-        imdbRate();
     }
 
     @SuppressLint("SetTextI18n")
@@ -69,10 +67,18 @@ public class MovieDescriptionActivity extends AppCompatActivity {
 
         TextView directors = (TextView) findViewById(R.id.director);
         directors.setText(movieItem.getDirectors());
+
+        Button trailer_btn = (Button) findViewById(R.id.trailer);
+        playTrailer(trailer_btn);
+
+        Button buy_ticket = (Button) findViewById(R.id.buy_ticket);
+        buyTicket(buy_ticket);
+
+        imdbRate();
     }
 
-    private void playTrailer(){
-        ((Button) findViewById(R.id.trailer)).setOnClickListener(new View.OnClickListener() {
+    private void playTrailer(Button button){
+        button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent trailer_intent = new Intent(getApplicationContext(), TrailerActivity.class);
@@ -81,6 +87,23 @@ public class MovieDescriptionActivity extends AppCompatActivity {
             }
         });
     }
+
+    private void buyTicket(Button button){
+        Intent intent;
+        if(DataStorageSingleton.getToken() == null){
+            DataStorageSingleton.setGo2account(false);
+            intent = new Intent(getApplicationContext(), LoginActivity.class);
+        }else{
+            intent = new Intent(getApplicationContext(), BuyTicketsActivity.class);
+        }
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(intent);
+            }
+        });
+    }
+
 
     private void imdbRate(){
         if (movieItem.getImdb_rate() == null)

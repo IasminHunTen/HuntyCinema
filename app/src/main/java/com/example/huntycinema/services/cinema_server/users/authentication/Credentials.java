@@ -1,7 +1,7 @@
-package com.example.huntycinema.services.cinema_server.users.gson_mapper_objects;
+package com.example.huntycinema.services.cinema_server.users.authentication;
 
 public class Credentials {
-    String username, password;
+    protected String username, password;
 
     public Credentials(String username, String password) {
         this.username = username;
