@@ -21,7 +21,7 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.MyViewHolder> 
     private Context context;
     private String cards_holder;
     private List<Card> cardList;
-    private static OnDeleteAdapterItem onDeleteAdapterItem;
+    private static OnDeleteAdapterItem<String> onDeleteAdapterItem;
 
     public CardAdapter(Context context, String cards_holder, List<Card> cardList) {
         this.context = context;
@@ -29,7 +29,7 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.MyViewHolder> 
         this.cardList = cardList;
     }
 
-    public static void setOnDeleteAdapterItem(OnDeleteAdapterItem onDeleteAdapterItem) {
+    public static void setOnDeleteAdapterItem(OnDeleteAdapterItem<String> onDeleteAdapterItem) {
         CardAdapter.onDeleteAdapterItem = onDeleteAdapterItem;
     }
 

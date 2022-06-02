@@ -2,8 +2,8 @@ package com.example.huntycinema.services.cinema_server.schedule;
 
 public class Schedule {
 
-    private String id, movie_id, room_id, sits_configuration;
-    private Integer sits_left, hour, minute;
+    private String id, movie_id, sits_configuration, day;
+    private Integer sits_left, hour, minute, room_raws;
     private Double price;
 
     public String getId() {
@@ -22,12 +22,12 @@ public class Schedule {
         this.movie_id = movie_id;
     }
 
-    public String getRoom_id() {
-        return room_id;
+    public Integer getRoom_raws() {
+        return room_raws;
     }
 
-    public void setRoom_id(String room_id) {
-        this.room_id = room_id;
+    public void setRoom_raws(Integer room_raws) {
+        this.room_raws = room_raws;
     }
 
     public String getSits_configuration() {
@@ -70,17 +70,11 @@ public class Schedule {
         this.price = price;
     }
 
-    @Override
-    public String toString() {
-        return "Schedule{" +
-                "id='" + id + '\'' +
-                ", movie_id='" + movie_id + '\'' +
-                ", room_id='" + room_id + '\'' +
-                ", sits_configuration='" + sits_configuration + '\'' +
-                ", sits_left=" + sits_left +
-                ", hour=" + hour +
-                ", minute=" + minute +
-                ", price=" + price +
-                '}';
+    public String getDay() {
+        return day;
+    }
+
+    public void setDay(String day) {
+        this.day = day;
     }
 }

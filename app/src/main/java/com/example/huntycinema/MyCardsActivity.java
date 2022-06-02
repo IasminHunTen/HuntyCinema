@@ -80,7 +80,7 @@ public class MyCardsActivity extends AppCompatActivity {
     }
 
     private void removeCard(){
-        CardAdapter.setOnDeleteAdapterItem(new OnDeleteAdapterItem() {
+        CardAdapter.setOnDeleteAdapterItem(new OnDeleteAdapterItem<String>() {
             @Override
             public void onDelete(String id) {
                 cardClient.delete_card(DataStorageSingleton.getToken(), id, new ResponseHandler<Void>() {

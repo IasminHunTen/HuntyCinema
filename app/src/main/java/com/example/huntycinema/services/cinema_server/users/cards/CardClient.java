@@ -30,4 +30,9 @@ public class CardClient extends MyApiRequest {
         Call<List<Card>> call = cardClient.fetch_credit_card(token);
         call.enqueue(new CallBackHandler<>(responseHandler));
     }
+
+    public void pay(String token, String card_number, Double amount, ResponseHandler<Void> responseHandler){
+        Call<Void> call = cardClient.update_card(token, new UpdateCard(card_number, amount));
+        call.enqueue(new CallBackHandler<>(responseHandler));
+    }
 }

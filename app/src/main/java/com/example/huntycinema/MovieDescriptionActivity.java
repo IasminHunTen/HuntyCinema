@@ -95,6 +95,7 @@ public class MovieDescriptionActivity extends AppCompatActivity {
             intent = new Intent(getApplicationContext(), LoginActivity.class);
         }else{
             intent = new Intent(getApplicationContext(), BuyTicketsActivity.class);
+            intent.putExtra("movieItem", movieItem);
         }
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -103,7 +104,6 @@ public class MovieDescriptionActivity extends AppCompatActivity {
             }
         });
     }
-
 
     private void imdbRate(){
         if (movieItem.getImdb_rate() == null)

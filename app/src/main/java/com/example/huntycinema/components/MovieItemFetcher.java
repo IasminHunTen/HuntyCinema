@@ -99,11 +99,17 @@ public class MovieItemFetcher {
         movieItem.setTop_cast(movie.getTop_cast().stream().collect(Collectors.joining(", ")));
         movieItem.setDirectors(movie.getDirectors().stream().collect(Collectors.joining(",")));
         movieItem.setYear(String.valueOf(movie.getYear()));
+        movieItem.setDay(schedule.getDay());
         movieItem.setRun_time(
                 String.valueOf(movie.getRun_time() / 60) + "h " +
                 String.valueOf(movie.getRun_time() % 60) + "min");
         movieItem.setImdb_rate(movie.getImdb_rate() == null ?
                 null : String.valueOf(movie.getImdb_rate()));
+        movieItem.setSchedule_id(schedule.getId());
+        movieItem.setPrice(schedule.getPrice());
+        movieItem.setConfiguration(schedule.getSits_configuration());
+        movieItem.setSits_left(schedule.getSits_left());
+        movieItem.setRom_rows(schedule.getRoom_raws());
         return movieItem;
     }
 

@@ -127,9 +127,11 @@
         android:textSize="32sp"
         android:text="Register"
         android:textColor="@color/label_color"
+        android:enabled="false"
         android:background="@drawable/full_rounded_view"
         android:layout_marginTop="20sp"
         app:layout_constraintLeft_toLeftOf="@id/password_field_register"
         app:layout_constraintTop_toBottomOf="@id/login_link"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

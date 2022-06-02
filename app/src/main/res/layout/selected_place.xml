@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="20sp"
+        android:id="@+id/selected_place"
+        android:maxLines="1"
+        android:scrollHorizontally="true"
+        android:background="@drawable/full_rounded_view"
+        android:gravity="center"
+        android:textSize="16sp"
+        android:textColor="@color/amber"
+        android:layout_marginTop="4sp"
+        android:layout_marginStart="16sp"
+        android:layout_marginEnd="16sp"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <Button
+        android:layout_width="20sp"
+        android:layout_height="20sp"
+        android:id="@+id/remove_tickets"
+        android:translationZ="10sp"
+        android:background="@drawable/full_rounded_view"
+        android:textSize="16sp"
+        android:textColor="@color/red"
+        android:text="x"
+        app:layout_constraintTop_toTopOf="@id/selected_place"
+        app:layout_constraintEnd_toEndOf="@id/selected_place"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

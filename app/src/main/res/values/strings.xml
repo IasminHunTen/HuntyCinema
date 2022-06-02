@@ -10,5 +10,7 @@
     <string name="username_does_not_exist">user does not exist </string>
     <string name="wrong_password">wrong password</string>
     <string name="invalida_mail_adress">invalid email</string>
+    <string name="new_password">new password</string>
+    <string name="confirmation_code">confirmation code</string>
 
 </resources>

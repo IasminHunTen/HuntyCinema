@@ -4,6 +4,210 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".BuyTicketsActivity">
+    tools:context=".BuyTicketsActivity"
+    android:background="@color/main_color">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:id="@+id/movie_name_buy_ticket"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:textColor="@color/label_color"
+        android:layout_marginTop="16sp"
+        android:layout_marginStart="8sp"
+        android:layout_marginEnd="8sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:id="@+id/date_time"
+        android:textSize="24sp"
+        android:textColor="@color/label_color"
+        android:layout_marginTop="4sp"
+        app:layout_constraintTop_toBottomOf="@id/movie_name_buy_ticket"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/price_label"
+        android:text="ticket price: "
+        android:textColor="@color/label_color"
+        android:textSize="24sp"
+        android:layout_marginTop="4sp"
+        android:layout_marginStart="8sp"
+        app:layout_constraintTop_toBottomOf="@id/date_time"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ticket_price"
+        android:inputType="numberDecimal"
+        android:textColor="@color/label_color"
+        android:textSize="24sp"
+        app:layout_constraintTop_toTopOf="@id/price_label"
+        app:layout_constraintStart_toEndOf="@id/price_label"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/free_sits_label"
+        android:textColor="@color/label_color"
+        android:text="free_sits: "
+        android:textSize="24sp"
+        android:layout_marginTop="16sp"
+        app:layout_constraintStart_toStartOf="@id/price_label"
+        app:layout_constraintTop_toBottomOf="@id/price_label"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/free_sits"
+        android:inputType="number"
+        android:text="123"
+        android:textColor="@color/label_color"
+        android:textSize="24sp"
+        app:layout_constraintTop_toTopOf="@id/free_sits_label"
+        app:layout_constraintStart_toEndOf="@id/free_sits_label"/>
+
+    <ImageButton
+        android:layout_width="24sp"
+        android:layout_height="24sp"
+        android:id="@+id/map_free_place"
+        android:background="@drawable/full_rounded_view"
+        android:src="@drawable/map"
+        android:layout_marginStart="32sp"
+        app:layout_constraintTop_toTopOf="@id/free_sits_label"
+        app:layout_constraintBottom_toBottomOf="@id/free_sits_label"
+        app:layout_constraintStart_toEndOf="@id/free_sits"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/buy_ticket_info"
+        android:textColor="@color/label_color"
+        android:textSize="24sp"
+        android:text="Choose the desire raw and line, an interval can be selected using a dash"
+        android:layout_marginStart="8sp"
+        android:layout_marginEnd="8sp"
+        android:layout_marginTop="8sp"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/free_sits_label"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="30sp"
+        android:id="@+id/line_value"
+        android:background="@drawable/full_rounded_view"
+        android:textSize="24sp"
+        android:layout_marginTop="16sp"
+        android:layout_marginStart="16sp"
+        android:layout_marginEnd="16sp"
+        app:layout_constraintTop_toBottomOf="@id/buy_ticket_info" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/line_validator"
+        android:textSize="16sp"
+        android:textColor="@color/red"
+        android:layout_marginTop="8sp"
+        app:layout_constraintTop_toBottomOf="@id/line_value"
+        app:layout_constraintStart_toStartOf="@id/line_value"
+        app:layout_constraintEnd_toEndOf="@id/line_value"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="30sp"
+        android:id="@+id/row_value"
+        android:background="@drawable/full_rounded_view"
+        android:textSize="24sp"
+        android:layout_marginTop="16sp"
+        android:layout_marginStart="16sp"
+        android:layout_marginEnd="16sp"
+        app:layout_constraintTop_toBottomOf="@id/line_validator" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/row_validator"
+        android:textSize="16sp"
+        android:textColor="@color/red"
+        android:layout_marginTop="8sp"
+        app:layout_constraintTop_toBottomOf="@id/row_value"
+        app:layout_constraintStart_toStartOf="@id/row_value"
+        app:layout_constraintEnd_toEndOf="@id/row_value"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/add_ticket"
+        android:background="@drawable/full_rounded_view"
+        android:textColor="@color/amber"
+        android:textSize="16sp"
+        android:text="add_ticket"
+        android:layout_marginTop="16sp"
+        app:layout_constraintTop_toBottomOf="@id/row_validator"
+        app:layout_constraintEnd_toEndOf="@id/row_value"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/selected_places"
+        android:layout_marginTop="16sp"
+        android:layout_marginBottom="16sp"
+        app:layout_constraintTop_toBottomOf="@id/add_ticket"
+        app:layout_constraintBottom_toTopOf="@id/place_order"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/place_order"
+        android:background="@drawable/full_rounded_view"
+        android:textColor="@color/amber"
+        android:textSize="16sp"
+        android:text="place order"
+        android:layout_marginBottom="4sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/no_tickets"
+        android:textSize="16sp"
+        android:textColor="@color/amber"
+        android:inputType="number"
+        android:layout_marginStart="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/place_order"
+        app:layout_constraintBottom_toBottomOf="@+id/place_order"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:textColor="@color/amber"
+        android:text=" tickets"
+        app:layout_constraintStart_toEndOf="@id/no_tickets"
+        app:layout_constraintTop_toTopOf="@id/no_tickets"
+        app:layout_constraintBottom_toBottomOf="@+id/no_tickets"/>
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/card_numbers_spinner"
+        android:layout_marginEnd="16sp"
+        app:layout_constraintTop_toTopOf="@id/place_order"
+        app:layout_constraintBottom_toBottomOf="@id/place_order"
+        app:layout_constraintEnd_toEndOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -27,4 +27,11 @@ public class ScheduleClient extends MyApiRequest {
         Call<List<Schedule>> call = scheduleClient.getSchedule(map);
         call.enqueue(new CallBackHandler<List<Schedule>>(responseHandler));
     }
+
+    public void refreshSchedule(String id, ResponseHandler<RefreshSchedule> responseHandler){
+        Call<RefreshSchedule> call = scheduleClient.refreshSchedule(id);
+        call.enqueue(new CallBackHandler<>(responseHandler));
+    }
+
+
 }

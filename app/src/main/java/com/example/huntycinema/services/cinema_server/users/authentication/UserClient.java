@@ -27,4 +27,14 @@ public class UserClient extends MyApiRequest {
         Call<UserToken> call = usersApi.login(device_id, new CredentialsWithEmail(username, password, email));
         call.enqueue(new CallBackHandler<>(responseHandler));
     }
+
+    public void resetPassword(String username, ResponseHandler<Void> responseHandler){
+        Call<Void> call = usersApi.reset_password(username);
+        call.enqueue(new CallBackHandler<>(responseHandler));
+    }
+
+    public void updatePassword(ResetPasswordBody resetPasswordBody, ResponseHandler<Void> responseHandler){
+        Call<Void> call = usersApi.update_password(resetPasswordBody);
+        call.enqueue(new CallBackHandler<>(responseHandler));
+    }
 }

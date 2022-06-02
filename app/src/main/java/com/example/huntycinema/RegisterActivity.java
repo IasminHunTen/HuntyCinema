@@ -18,7 +18,7 @@ import android.widget.Toast;
 import com.example.huntycinema.localstorage.DataStorageSingleton;
 import com.example.huntycinema.services.cinema_server.users.authentication.UserClient;
 import com.example.huntycinema.services.cinema_server.users.authentication.UserToken;
-import com.example.huntycinema.utils.RegisterFieldsValidator;
+import com.example.huntycinema.utils.FormFieldValidation;
 import com.example.huntycinema.utils.ResponseHandler;
 import com.example.huntycinema.utils.StringUtils;
 import com.example.huntycinema.utils.ValidateRegisterField;
@@ -33,6 +33,7 @@ public class RegisterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+        FormFieldValidation.resetValidators();
         init();
     }
 
@@ -42,7 +43,7 @@ public class RegisterActivity extends AppCompatActivity {
 
         mail_et = (EditText) findViewById(R.id.email_field);
         mail_tv = (TextView) findViewById(R.id.email_validator);
-        mail_et.addTextChangedListener(new RegisterFieldsValidator(mail_tv, register_button, new ValidateRegisterField() {
+        mail_et.addTextChangedListener(new FormFieldValidation(mail_tv, register_button, new ValidateRegisterField() {
             @Override
             public String validate(Editable editable) {
                 String input_field = editable.toString().trim();
@@ -56,7 +57,7 @@ public class RegisterActivity extends AppCompatActivity {
 
         username_et = (EditText) findViewById(R.id.username_field_register);
         username_tv = (TextView) findViewById(R.id.username_validator_register);
-        username_et.addTextChangedListener(new RegisterFieldsValidator(username_tv, register_button, new ValidateRegisterField() {
+        username_et.addTextChangedListener(new FormFieldValidation(username_tv, register_button, new ValidateRegisterField() {
             @Override
             public String validate(Editable editable) {
                 String input_field = editable.toString().trim();
@@ -70,7 +71,7 @@ public class RegisterActivity extends AppCompatActivity {
 
         password_et = (EditText) findViewById(R.id.password_field_register);
         password_tv = (TextView) findViewById(R.id.password_validator_register);
-        password_et.addTextChangedListener(new RegisterFieldsValidator(password_tv, register_button, new ValidateRegisterField() {
+        password_et.addTextChangedListener(new FormFieldValidation(password_tv, register_button, new ValidateRegisterField() {
             @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public String validate(Editable editable) {

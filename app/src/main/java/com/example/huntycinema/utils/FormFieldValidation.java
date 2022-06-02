@@ -17,22 +17,21 @@ import java.util.Map;
 import java.util.function.*;
 import java.util.stream.Collectors;
 
-public class RegisterFieldsValidator implements TextWatcher {
+public class FormFieldValidation implements TextWatcher {
 
     private TextView textView;
     private Button button;
     private ValidateRegisterField validateRegisterField;
-    public static Map<Integer, Boolean> buttonState;
-    private static final String TAG = "RegisterFieldsValidator";
+    public static Map<Integer, Boolean> validators;
 
-    public RegisterFieldsValidator(TextView textView, Button button, ValidateRegisterField validateRegisterField) {
+
+
+    public FormFieldValidation(TextView textView, Button button, ValidateRegisterField validateRegisterField) {
         super();
         this.textView = textView;
         this.button = button;
         this.validateRegisterField = validateRegisterField;
-        if(buttonState == null)
-            buttonState = new HashMap<>();
-        buttonState.put(textView.hashCode(), false);
+        validators.put(textView.hashCode(), false);
     }
 
     @Override
@@ -66,16 +65,19 @@ public class RegisterFieldsValidator implements TextWatcher {
     }
 
     private void enable_button(Boolean valid_state){
-        Log.d(TAG, "enable_button: "+buttonState.toString());
-        buttonState.put(textView.hashCode(), valid_state);
+        validators.put(textView.hashCode(), valid_state);
         boolean b = true;
-        for (Boolean aBoolean : buttonState.values()) {
+        for (Boolean aBoolean : validators.values()) {
             if (!aBoolean) {
                 b = false;
                 break;
             }
         }
         button.setEnabled(b);
+    }
+
+    public static void resetValidators(){
+        validators = new HashMap<>();
     }
 
     

@@ -3,6 +3,7 @@ package com.example.huntycinema.localstorage;
 
 import com.example.huntycinema.services.cinema_server.users.cards.Card;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import io.reactivex.rxjava3.annotations.Nullable;
@@ -16,6 +17,7 @@ public class DataStorageSingleton {
     private static List<Card> myCards;
 
     public DataStorageSingleton(@Nullable String token, String device_id) {
+        myCards = new ArrayList<>();
         DataStorageSingleton.token = token;
         DataStorageSingleton.device_id = device_id;
         DataStorageSingleton.loadState = true;

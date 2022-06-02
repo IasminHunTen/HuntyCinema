@@ -3,11 +3,18 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Anul4/licenta/HuntyCinema/app/src/main/res/drawable-anydpi/check.xml" value="0.114" />
+        <entry key="..\:/Anul4/licenta/HuntyCinema/app/src/main/res/drawable-anydpi/height.xml" value="0.131" />
         <entry key="..\:/Anul4/licenta/HuntyCinema/app/src/main/res/drawable-anydpi/ic_imdb_rate.xml" value="0.195" />
         <entry key="..\:/Anul4/licenta/HuntyCinema/app/src/main/res/drawable-anydpi/mail_field.xml" value="0.1945" />
+        <entry key="..\:/Anul4/licenta/HuntyCinema/app/src/main/res/drawable-anydpi/map.xml" value="0.131" />
         <entry key="..\:/Anul4/licenta/HuntyCinema/app/src/main/res/drawable-anydpi/my_account.xml" value="0.1945" />
         <entry key="..\:/Anul4/licenta/HuntyCinema/app/src/main/res/drawable-anydpi/password_field.xml" value="0.1945" />
         <entry key="..\:/Anul4/licenta/HuntyCinema/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1945" />
+        <entry key="..\:/Anul4/licenta/HuntyCinema/app/src/main/res/drawable/circle_button.xml" value="0.131" />
+        <entry key="..\:/Anul4/licenta/HuntyCinema/app/src/main/res/drawable/circle_view.xml" value="0.131" />
+        <entry key="..\:/Anul4/licenta/HuntyCinema/app/src/main/res/drawable/circle_view_red.xml" value="0.131" />
+        <entry key="..\:/Anul4/licenta/HuntyCinema/app/src/main/res/drawable/cirle_view_green.xml" value="0.131" />
         <entry key="..\:/Anul4/licenta/HuntyCinema/app/src/main/res/drawable/credit_card_view.xml" value="0.1945" />
         <entry key="..\:/Anul4/licenta/HuntyCinema/app/src/main/res/drawable/fade_to_blue.xml" value="0.1" />
         <entry key="..\:/Anul4/licenta/HuntyCinema/app/src/main/res/drawable/full_round_view_green.xml" value="0.1" />
@@ -17,14 +24,21 @@
         <entry key="..\:/Anul4/licenta/HuntyCinema/app/src/main/res/drawable/left_rounded_button.xml" value="0.195" />
         <entry key="..\:/Anul4/licenta/HuntyCinema/app/src/main/res/drawable/right_rounded_botton.xml" value="0.1945" />
         <entry key="..\:/Anul4/licenta/HuntyCinema/app/src/main/res/drawable/rightroundedbutton.xml" value="0.1945" />
+        <entry key="..\:/Anul4/licenta/HuntyCinema/app/src/main/res/layout/activity_buy_tickets.xml" value="0.25" />
         <entry key="..\:/Anul4/licenta/HuntyCinema/app/src/main/res/layout/activity_login.xml" value="0.17074275362318841" />
         <entry key="..\:/Anul4/licenta/HuntyCinema/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/Anul4/licenta/HuntyCinema/app/src/main/res/layout/activity_movie_description.xml" value="0.25" />
         <entry key="..\:/Anul4/licenta/HuntyCinema/app/src/main/res/layout/activity_my_account.xml" value="0.17074275362318841" />
         <entry key="..\:/Anul4/licenta/HuntyCinema/app/src/main/res/layout/activity_my_cards.xml" value="0.17074275362318841" />
         <entry key="..\:/Anul4/licenta/HuntyCinema/app/src/main/res/layout/activity_register.xml" value="0.17074275362318841" />
+        <entry key="..\:/Anul4/licenta/HuntyCinema/app/src/main/res/layout/activity_reset_password.xml" value="0.17074275362318841" />
         <entry key="..\:/Anul4/licenta/HuntyCinema/app/src/main/res/layout/activity_trailer.xml" value="0.1" />
+        <entry key="..\:/Anul4/licenta/HuntyCinema/app/src/main/res/layout/card_number.xml" value="0.17708333333333334" />
         <entry key="..\:/Anul4/licenta/HuntyCinema/app/src/main/res/layout/card_reprezentation.xml" value="0.17074275362318841" />
+        <entry key="..\:/Anul4/licenta/HuntyCinema/app/src/main/res/layout/choose_card.xml" value="0.17074275362318841" />
+        <entry key="..\:/Anul4/licenta/HuntyCinema/app/src/main/res/layout/dialog_choose_card.xml" value="0.17708333333333334" />
+        <entry key="..\:/Anul4/licenta/HuntyCinema/app/src/main/res/layout/dialog_choose_card_to_pay.xml" value="0.17074275362318841" />
+        <entry key="..\:/Anul4/licenta/HuntyCinema/app/src/main/res/layout/dialog_reset_password.xml" value="0.17074275362318841" />
         <entry key="..\:/Anul4/licenta/HuntyCinema/app/src/main/res/layout/fragement_favorite_genres.xml" value="0.17074275362318841" />
         <entry key="..\:/Anul4/licenta/HuntyCinema/app/src/main/res/layout/fragment_choose_favorite_genres.xml" value="0.17074275362318841" />
         <entry key="..\:/Anul4/licenta/HuntyCinema/app/src/main/res/layout/fragment_chose_favorite_genres.xml" value="0.17074275362318841" />
@@ -33,6 +47,9 @@
         <entry key="..\:/Anul4/licenta/HuntyCinema/app/src/main/res/layout/loading_layout.xml" value="0.1" />
         <entry key="..\:/Anul4/licenta/HuntyCinema/app/src/main/res/layout/movie_details.xml" value="0.17074275362318841" />
         <entry key="..\:/Anul4/licenta/HuntyCinema/app/src/main/res/layout/movie_item.xml" value="0.17074275362318841" />
+        <entry key="..\:/Anul4/licenta/HuntyCinema/app/src/main/res/layout/selected_place.xml" value="0.25" />
+        <entry key="..\:/Anul4/licenta/HuntyCinema/app/src/main/res/layout/selection_button.xml" value="0.17074275362318841" />
+        <entry key="..\:/Anul4/licenta/HuntyCinema/app/src/main/res/layout/sits_selection.xml" value="0.25" />
       </map>
     </option>
   </component>

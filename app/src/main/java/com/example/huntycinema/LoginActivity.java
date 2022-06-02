@@ -5,28 +5,25 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.provider.Settings;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.huntycinema.components.dialogs.ResetPasswordDialog;
 import com.example.huntycinema.localstorage.DataStorageSingleton;
 import com.example.huntycinema.services.cinema_server.users.authentication.UserClient;
 import com.example.huntycinema.services.cinema_server.users.authentication.UserToken;
+import com.example.huntycinema.components.dialogs.DialogCommunication;
 import com.example.huntycinema.utils.LoginFieldsValidator;
 import com.example.huntycinema.utils.ResponseHandler;
 
 public class LoginActivity extends AppCompatActivity {
 
     private EditText username_et, password_et;
-    private TextView username_tv, password_tv, go2Register;
+    private TextView username_tv, password_tv, go2Register, reset_password;
     private Button login_btn;
-    private Intent nextIntent;
-
 
 
     @Override
@@ -49,6 +46,13 @@ public class LoginActivity extends AppCompatActivity {
         password_et.addTextChangedListener(new LoginFieldsValidator(password_tv, login_btn));
         go2Register = (TextView) findViewById(R.id.register_link);
         go2register();
+        reset_password = (TextView) findViewById(R.id.reset_password_link);
+        reset_password.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                resetPassword();
+            }
+        });
     }
 
     private boolean emptyET(EditText editText){
@@ -115,4 +119,27 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
     }
+
+    private void resetPassword(){
+        String username = username_et.getText().toString().trim();
+        new UserClient().resetPassword(username, new ResponseHandler<Void>() {
+            @Override
+            public void onResponse(Void response) {
+                Intent intent = new Intent(getApplicationContext(), ResetPasswordActivity.class);
+                intent.putExtra("username", username);
+                startActivity(intent);
+            }
+
+            @Override
+            public void onError(int code, String error) {
+                if(code == 404){
+                    error = "User with username: " + username + " not found";
+                }
+                Toast.makeText(getApplicationContext(), error, Toast.LENGTH_LONG).show();
+            }
+        });
+    }
+
+
+
 }

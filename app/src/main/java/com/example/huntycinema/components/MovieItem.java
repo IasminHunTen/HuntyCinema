@@ -8,8 +8,9 @@ import java.util.stream.Collectors;
 import io.reactivex.rxjava3.annotations.Nullable;
 
 public class MovieItem implements Serializable {
-    private String title, plot, date, imageUrl, trailerUrl, genres, directors, top_cast, year, run_time, imdb_rate;
-
+    private String title, plot, date, imageUrl, trailerUrl, genres, directors, top_cast, year, run_time, imdb_rate, day, configuration, schedule_id;
+    private Integer rom_rows, sits_left;
+    private Double price;
 
     public MovieItem() {
     }
@@ -103,24 +104,51 @@ public class MovieItem implements Serializable {
         this.imdb_rate = imdb_rate;
     }
 
-    public String prepareHeader(){
-       return Arrays.asList(title, genres, run_time, year).stream().collect(Collectors.joining("-"));
+    public String getDay() {
+        return day;
     }
 
-    @Override
-    public String toString() {
-        return "MovieItem{" +
-                "title='" + title + '\'' +
-                ", plot='" + plot + '\'' +
-                ", date='" + date + '\'' +
-                ", imageUrl='" + imageUrl + '\'' +
-                ", trailerUrl='" + trailerUrl + '\'' +
-                ", genres='" + genres + '\'' +
-                ", directors='" + directors + '\'' +
-                ", top_cast='" + top_cast + '\'' +
-                ", year='" + year + '\'' +
-                ", run_time='" + run_time + '\'' +
-                ", imdb_rate='" + imdb_rate + '\'' +
-                '}';
+    public void setDay(String day) {
+        this.day = day;
+    }
+
+    public Integer getRom_rows() {
+        return rom_rows;
+    }
+
+    public void setRom_rows(Integer rom_rows) {
+        this.rom_rows = rom_rows;
+    }
+
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
+    }
+
+    public String getConfiguration() {
+        return configuration;
+    }
+
+    public void setConfiguration(String configuration) {
+        this.configuration = configuration;
+    }
+
+    public Integer getSits_left() {
+        return sits_left;
+    }
+
+    public void setSits_left(Integer sits_left) {
+        this.sits_left = sits_left;
+    }
+
+    public String getSchedule_id() {
+        return schedule_id;
+    }
+
+    public void setSchedule_id(String schedule_id) {
+        this.schedule_id = schedule_id;
     }
 }

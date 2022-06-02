@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="32sp"
+        android:id="@+id/card_number_dialog"
+        android:background="@drawable/full_rounded_view"
+        android:textColor="white"
+        android:textSize="24sp"
+        android:layout_marginTop="8sp"
+        android:layout_marginStart="16sp"
+        android:layout_marginEnd="16sp"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <Button
+        android:layout_width="32sp"
+        android:layout_height="32sp"
+        android:translationZ="10sp"
+        android:id="@+id/pay_btn"
+        android:background="@drawable/full_rounded_view"
+        android:textSize="24sp"
+        android:textColor="@color/green"
+        android:text="pay"
+        app:layout_constraintTop_toTopOf="@id/card_number_dialog"
+        app:layout_constraintEnd_toEndOf="@id/card_number_dialog"/>
+
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
