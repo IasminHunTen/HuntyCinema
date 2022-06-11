@@ -9,7 +9,7 @@
         android:layout_height="32sp"
         android:id="@+id/card_number_dialog"
         android:background="@drawable/full_rounded_view"
-        android:textColor="white"
+        android:textColor="@color/white"
         android:textSize="24sp"
         android:layout_marginTop="8sp"
         android:layout_marginStart="16sp"
