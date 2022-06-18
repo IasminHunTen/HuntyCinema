@@ -67,6 +67,16 @@
         android:background="@drawable/full_rounded_view"
         app:layout_constraintTop_toBottomOf="@id/username_field_login"/>
 
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/login_hide_password"
+        android:translationZ="1sp"
+        android:src="@drawable/hide_password"
+        android:background="@color/main_clor_transparent"
+        app:layout_constraintTop_toTopOf="@id/password_field_login"
+        app:layout_constraintBottom_toBottomOf="@id/password_field_login"
+        app:layout_constraintEnd_toEndOf="@id/password_field_login"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

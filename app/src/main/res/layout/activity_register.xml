@@ -91,9 +91,19 @@
         android:layout_marginLeft="32sp"
         android:layout_marginRight="32sp"
         android:drawableStart="@drawable/password_field"
-        android:drawableEnd="@drawable/hide_password"
         android:background="@drawable/full_rounded_view"
         app:layout_constraintTop_toBottomOf="@id/username_field_register"/>
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/hide_password_register"
+        android:translationZ="10sp"
+        android:background="@color/main_clor_transparent"
+        android:src="@drawable/hide_password"
+        app:layout_constraintTop_toTopOf="@id/password_field_register"
+        app:layout_constraintBottom_toBottomOf="@id/password_field_register"
+        app:layout_constraintEnd_toEndOf="@id/password_field_register"/>
 
     <TextView
         android:layout_width="wrap_content"

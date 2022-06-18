@@ -1,5 +1,6 @@
 package com.example.huntycinema.services.cinema_server.users;
 
+import com.example.huntycinema.services.cinema_server.genres.Genre;
 import com.example.huntycinema.services.cinema_server.users.authentication.Credentials;
 import com.example.huntycinema.services.cinema_server.users.authentication.CredentialsWithEmail;
 import com.example.huntycinema.services.cinema_server.users.authentication.ResetPasswordBody;
@@ -60,6 +61,9 @@ public interface UsersApi {
     @DELETE("users/tickets")
     Call<Amount> delete_ticket(@Query("token") String token, TicketId ticketId);
 
+    @GET("users/user_favorite_genres")
+    Call<List<Genre>> get_fav_genres(@Query("token") String token);
 
-
+    @PUT("users/user_favorite_genres")
+    Call<Void> update_fav_genres(@Query("token") String token, @Query("genre_ids") String genre_ids);
 }

@@ -9,6 +9,7 @@ import android.text.Editable;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,6 +24,7 @@ public class ResetPasswordActivity extends AppCompatActivity {
     private EditText password_et, confirmation_code_et;
     private TextView password_tv, confirmation_code_tv;
     private Button reset_btn;
+    private ImageButton hide_password;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,6 +72,14 @@ public class ResetPasswordActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 resetPassword();
+            }
+        });
+
+        hide_password = findViewById(R.id.hide_password_reset_password);
+        hide_password.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                StringUtils.toggle_password_field(password_et);
             }
         });
     }

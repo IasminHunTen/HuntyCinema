@@ -4,10 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,13 +21,16 @@ import com.example.huntycinema.services.cinema_server.users.authentication.UserT
 import com.example.huntycinema.components.dialogs.DialogCommunication;
 import com.example.huntycinema.utils.LoginFieldsValidator;
 import com.example.huntycinema.utils.ResponseHandler;
+import com.example.huntycinema.utils.StringUtils;
+
+import java.lang.reflect.Type;
 
 public class LoginActivity extends AppCompatActivity {
 
     private EditText username_et, password_et;
     private TextView username_tv, password_tv, go2Register, reset_password;
     private Button login_btn;
-
+    private ImageButton hide_password;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +57,14 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 resetPassword();
+            }
+        });
+
+        hide_password = findViewById(R.id.login_hide_password);
+        hide_password.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                StringUtils.toggle_password_field(password_et);
             }
         });
     }

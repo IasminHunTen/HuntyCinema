@@ -80,5 +80,4 @@ public class FormFieldValidation implements TextWatcher {
         validators = new HashMap<>();
     }
 
-    
 }
